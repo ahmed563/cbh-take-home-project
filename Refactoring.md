@@ -9,3 +9,4 @@ You've been asked to refactor the function `deterministicPartitionKey` in [`dpk.
 You will be graded on the exhaustiveness and quality of your unit tests, the depth of your refactor, and the level of insight into your thought process provided by the written explanation.
 
 ## Your Explanation Here
+I moved event validation at the top to return if there is no event passed to avoid running unnecessary checks. Instead of defining an undefined candidate, I took partitionKey attribute in the event as the initial value and based on partitionKey is there or not, grouped related checks in code blocks. Hashed candidate if required and returned the value. Since related conditions are grouped in separate blocks, logic is more readable, reasonable, and understandable. I didn't create separate functions as it was not specified and not required in my opinion but I did refactor the function with the separation of concerns principle in mind.
